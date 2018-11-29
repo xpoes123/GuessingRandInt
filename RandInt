@@ -1,0 +1,61 @@
+import random
+
+IntegerMin = 1
+IntegerMax = 10
+
+list = []
+Counter = 1
+amount = 100
+
+
+for i in range(amount):
+
+
+    OriginalRandomInteger = random.randint(IntegerMin, IntegerMax)
+
+    MachineGuessing = random.randint(IntegerMin, IntegerMax)
+
+    MachineGuessingShadow = MachineGuessing
+    list.append(Counter)
+    Counter = 1
+    print(OriginalRandomInteger,MachineGuessing)
+    print(Counter)
+
+
+
+    while MachineGuessing != OriginalRandomInteger:
+
+
+        if MachineGuessing == OriginalRandomInteger:
+            print("Why")
+
+
+        elif MachineGuessing > OriginalRandomInteger:
+
+            MachineGuessing = random.randint(OriginalRandomInteger, MachineGuessingShadow-1)
+
+            MachineGuessingShadow = MachineGuessing
+
+            Counter = Counter+1
+
+            print(OriginalRandomInteger,MachineGuessing)
+
+            print(Counter)
+
+
+        else:
+
+            MachineGuessing = random.randint(MachineGuessingShadow+1, OriginalRandomInteger)
+
+            Counter = Counter+1
+
+            MachineGuessingShadow = MachineGuessing
+
+            print(OriginalRandomInteger,MachineGuessing)
+
+            print(Counter)
+print(list)
+average = sum(list)
+average = average/amount
+print(average)
+print(IntegerMin, IntegerMax)
