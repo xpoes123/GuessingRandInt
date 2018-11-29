@@ -1,13 +1,14 @@
+#Imports
 import random
 
+#Range of Guess values
 IntegerMin = 1
-IntegerMax = 10
-
+IntegerMax = 2
+#Setting up variabels
 list = []
 Counter = 1
-amount = 100
-
-
+amount = 1000000
+#Guessing Function
 for i in range(amount):
 
 
@@ -54,7 +55,13 @@ for i in range(amount):
             print(OriginalRandomInteger,MachineGuessing)
 
             print(Counter)
+
+#Analytics
 print(list)
+mininum = min(list)
+print("Min:", mininum)
+maximum = max(list)
+print("Max:", maximum)
 average = sum(list)
 average = average/amount
 print(average)
